@@ -1,0 +1,14 @@
+<h:dataTable value="#{CDBean.availableCDs}" var="cd" xmlns:h="http://java.sun.com/jsf/html"
+             xmlns:f="http://java.sun.com/jsf/core">
+    <h:column>
+        <f:facet name="header">Title</f:facet>
+        #{cd.title}
+    </h:column>
+    <h:column>
+        <f:facet name="header">Artist</f:facet>
+        #{cd.artist}
+    </h:column>
+    <h:column>
+        <h:commandButton value="Borrow" action="#{EmpruntBean.borrowCD(cd.id)}" />
+    </h:column>
+</h:dataTable>
